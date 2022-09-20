@@ -10,4 +10,5 @@
 
     <color name="textMain">#0C1C4C</color>
     <color name="Black">#000000</color>
+    <color name="lineTextView">#0C1C4C</color>
 </resources>

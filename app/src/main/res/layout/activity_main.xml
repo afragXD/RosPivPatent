@@ -24,8 +24,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="172dp"
-        android:text="Быстрый поиск"
-        android:textSize="28dp"
+        android:text="@string/fastSearch"
+        android:textSize="28sp"
         android:textColor="@color/textMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -38,24 +38,29 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="41dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <EditText
             android:id="@+id/editChoose"
             android:layout_width="257dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/line_inp"
             android:hint="@string/searchText"
-            android:textColor="@color/black"/>
+            android:maxLength="30"
+            android:maxLines="1"
+            android:paddingLeft="20sp"
+            android:textColor="@color/black" />
 
         <ImageButton
-            android:id="@+id/loup"
+            android:id="@+id/btnLoup"
             android:layout_width="25dp"
             android:layout_height="25dp"
+            android:layout_marginLeft="18dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/loup"
-            android:background="@null"/>
+            android:background="@null"
+            android:src="@drawable/loup" />
 
     </LinearLayout>
 

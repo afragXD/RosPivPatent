@@ -6,11 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -31,7 +29,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageButton loup;
+    private ImageButton btnLoup;
     private EditText editChoose;
     private LinearLayout layoutSearch;
 
@@ -42,18 +40,28 @@ public class MainActivity extends AppCompatActivity {
 
         //post();
         init();
+        click();
     }
 
     private void init(){
-        loup = findViewById(R.id.loup);
+        btnLoup = findViewById(R.id.btnLoup);
         editChoose = findViewById(R.id.editChoose);
         layoutSearch = findViewById(R.id.layoutSearch);
     }
 
-    private void post(){
+    private void click(){
+        btnLoup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                post(editChoose.getText().toString());
+            }
+        });
+    }
+
+    private void post(String input){
         JSONObject postData = new JSONObject();
         try {
-            postData.put("qn", "пиво");
+            postData.put("qn", input);
         } catch (JSONException e) {
             Log.d("MyLog", "FF");
         }
@@ -62,7 +70,12 @@ public class MainActivity extends AppCompatActivity {
         JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.POST, getString(R.string.URL),postData , new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                Log.d("MyLog", response.toString());
+                //Log.d("MyLog", response.toString());
+                try {
+                    Log.d("MyLog", response.getJSONArray("hits").getJSONObject(0).toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         }, new Response.ErrorListener() {
             @Override

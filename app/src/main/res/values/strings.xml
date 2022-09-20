@@ -3,4 +3,5 @@
     <string name="URL">https://searchplatform.rospatent.gov.ru/patsearch/v0.2/search</string>
     <string name="SECURITY_API_KEY">193692a8f81a4d9286964658a811141c</string>
     <string name="searchText">Что вы ищете?</string>
+    <string name="fastSearch">Быстрый поиск</string>
 </resources>
