@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/simpleSearch"
+            android:title="Простой поиск"/>
+        <item
+            android:id="@+id/advancedSearch"
+            android:title="Расширенный поиск"/>
+        <item
+            android:id="@+id/AISearch"
+            android:title="Поиск A.I."/>
+        <item
+            android:id="@+id/options"
+            android:title="Параметры"/>
+
+    </group>
+
+</menu>
