@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editChoose;
     private LinearLayout layoutSearch;
     DrawerLayout drawerLayout;
+    private LinearLayout simpleSearch, advancedSearch, AISearch, options;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
         layoutSearch = findViewById(R.id.layoutSearch);
         btnMenu = findViewById(R.id.btnMenu);
         drawerLayout = findViewById(R.id.drawerLayout);
+        simpleSearch = findViewById(R.id.simpleSearch);
+        advancedSearch = findViewById(R.id.advancedSearch);
+        AISearch = findViewById(R.id.AISearch);
+        options = findViewById(R.id.options);
     }
 
     private void click(){
@@ -66,6 +72,32 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
+        simpleSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SimpleSearchActivity.class);
+                startActivity(intent);
+                //finish();
+            }
+        });
+        advancedSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        AISearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        options.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }

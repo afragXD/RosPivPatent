@@ -98,7 +98,7 @@
                     android:textSize="18sp"
                     android:paddingStart="31dp"
                     android:text="Простой поиск"
-                    android:textColor="@color/menuTextColor"/>
+                    android:textColor="@drawable/text_click"/>
                 <ImageView
                     android:layout_width="8dp"
                     android:layout_height="16dp"
@@ -120,7 +120,7 @@
                     android:textSize="18sp"
                     android:paddingStart="31dp"
                     android:text="Расширенный поиск"
-                    android:textColor="@color/menuTextColor"/>
+                    android:textColor="@drawable/text_click"/>
                 <ImageView
                     android:layout_width="8dp"
                     android:layout_height="16dp"
@@ -142,7 +142,7 @@
                     android:textSize="18sp"
                     android:paddingStart="31dp"
                     android:text="Поиск A.I."
-                    android:textColor="@color/menuTextColor"/>
+                    android:textColor="@drawable/text_click"/>
                 <ImageView
                     android:layout_width="8dp"
                     android:layout_height="16dp"
@@ -164,7 +164,7 @@
                     android:textSize="18sp"
                     android:paddingStart="31dp"
                     android:text="Параметры"
-                    android:textColor="@color/menuTextColor"/>
+                    android:textColor="@drawable/text_click"/>
                 <ImageView
                     android:layout_width="8dp"
                     android:layout_height="16dp"
