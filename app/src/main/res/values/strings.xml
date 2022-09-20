@@ -1,7 +1,15 @@
 <resources>
     <string name="app_name">RosPivPatent</string>
-    <string name="URL">https://searchplatform.rospatent.gov.ru/patsearch/v0.2/search</string>
-    <string name="SECURITY_API_KEY">193692a8f81a4d9286964658a811141c</string>
     <string name="searchText">Что вы ищете?</string>
     <string name="fastSearch">Быстрый поиск</string>
+    <string name="URL">https://searchplatform.rospatent.gov.ru/patsearch/v0.2/search</string>
+    <string name="SECURITY_API_KEY">193692a8f81a4d9286964658a811141c</string>
+    <string name="SimpleSearch">простой поиск</string>
+    <string name="DocumentNumber">Номер документа</string>
+    <string name="PublicationDateFrom">дата публикации от</string>
+    <string name="author">автор</string>
+    <string name="CopyrightHolder">правооблодатель</string>
+    <string name="applicant">заявитель</string>
+    <string name="SearchArrays">поисковые массивы</string>
+    <string name="PublicationDateBefore">дата публикации до</string>
 </resources>

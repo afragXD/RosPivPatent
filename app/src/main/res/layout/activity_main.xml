@@ -54,7 +54,7 @@
             android:textColor="@color/black" />
 
         <ImageButton
-            android:id="@+id/btnLoup"
+            android:id="@+id/btnLoupSimple"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginLeft="18dp"
