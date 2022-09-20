@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -27,7 +31,9 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button button;
+    private ImageButton loup;
+    private EditText editChoose;
+    private LinearLayout layoutSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //post();
+        init();
+    }
+
+    private void init(){
+        loup = findViewById(R.id.loup);
+        editChoose = findViewById(R.id.editChoose);
+        layoutSearch = findViewById(R.id.layoutSearch);
     }
 
     private void post(){
