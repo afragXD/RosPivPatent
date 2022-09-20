@@ -1,5 +1,6 @@
 package com.example.rospivpatent;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -12,10 +13,13 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -25,23 +29,51 @@ public class MainActivity extends AppCompatActivity {
 
     private Button button;
 
-    String URL = "https://searchplatform.rospatent.gov.ru/patsearch/v0.2/search";
-    String API_KEY = "193692a8f81a4d9286964658a811141c";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        api1();
+        api2();
     }
-    private void api1(){
+
+    private void api2(){
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+        JSONObject postData = new JSONObject();
+        try {
+            postData.put("Authorization", "Bearer " + "193692a8f81a4d9286964658a811141c");
+            postData.put("Content-Type", "application/json");
+            postData.put("limit", "1");
+            postData.put("qn", "beer");
+        } catch (JSONException e) {
+            Log.d("MyLog", "FF");
+        }
+        String url = "https://searchplatform.rospatent.gov.ru/patsearch/v0.2/search/";
+
+
+
+        button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onResponse(String response) {
-                Log.d("MyLog", response);
+            public void onClick(View view) {
+                post();
+            }
+        });
+    }
+    private void post(){
+        JSONObject postData = new JSONObject();
+        try {
+            postData.put("qn", "пиво");
+        } catch (JSONException e) {
+            Log.d("MyLog", "FF");
+        }
+
+        RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
+        JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.POST, getString(R.string.URL),postData , new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.d("MyLog", response.toString());
             }
         }, new Response.ErrorListener() {
             @Override
@@ -51,55 +83,12 @@ public class MainActivity extends AppCompatActivity {
         }){
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
-                HashMap header = new HashMap();
-                header.put("Authorization", "Bearer " + API_KEY);
-                header.put("Content-Type", "application/json");
-                header.put("limit", "1");
-                header.put("qn", "пиво");
-                return header;
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Authorization", "Bearer " + getString(R.string.SECURITY_API_KEY));
+                headers.put("Content-Type", "application/json");
+                return headers;
             }
         };
-        button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                requestQueue.add(stringRequest);
-            }
-        });
-    }
-    private void api2(){
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, URL, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.d("MyLog", response.toString());
-                        //getJSONObject
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.d("MyLog", error.toString());
-            }
-        })
-        {
-            @Override
-            public Map getHeaders() throws AuthFailureError {
-                HashMap header = new HashMap();
-                header.put("Authorization", "Bearer " + API_KEY);
-                header.put("Content-Type", "application/json");
-                header.put("limit", "1");
-                header.put("qn", "пиво");
-                return header;
-            }
-        };
-        button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                requestQueue.add(request);
-            }
-        });
+        requestQueue.add(stringRequest);
     }
 }
