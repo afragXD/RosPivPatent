@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,95 +8,104 @@
     android:background="@drawable/main_bg"
     tools:context=".SearchingResultsActivity">
 
-    <TextView
-        android:id="@+id/textViewSimple"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="56dp"
-        android:text="@string/SimpleSearch"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editChooseSimple"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="15dp"
-        android:background="@drawable/line_inp"
-        android:hint="@string/searchText"
-        android:maxLength="30"
-        android:maxLines="1"
-        android:paddingLeft="20sp"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toStartOf="@+id/btnLoupSimple"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewSimple" />
-
-    <ImageButton
-        android:id="@+id/btnLoupSimple"
-        android:layout_width="39dp"
-        android:layout_height="0dp"
-        android:layout_gravity="center_vertical"
-        android:layout_marginTop="106dp"
-        android:layout_marginEnd="4dp"
-        android:background="@null"
-        android:src="@drawable/loup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editChooseSimple"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="_________"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editChooseSimple" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="31dp"
-        android:background="@null"
-        android:src="@drawable/btn_menu"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/constraintLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="horizontal"
-        android:background="@drawable/layout_bg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="match_parent">
 
-        <ImageButton
+        <TextView
+            android:id="@+id/textViewSimple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@null"
-            android:src="@drawable/search_results" />
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="56dp"
+            android:text="@string/SimpleSearch"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editChooseSimple"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/line_inp"
+            android:hint="@string/searchText"
+            android:maxLength="30"
+            android:maxLines="1"
+            android:paddingLeft="20sp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/btnLoupSimple"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSimple" />
 
         <ImageButton
+            android:id="@+id/btnLoupSimple"
+            android:layout_width="39dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="106dp"
+            android:layout_marginEnd="4dp"
+            android:background="@null"
+            android:src="@drawable/loup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/editChooseSimple"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@null"
-            android:src="@drawable/analysis_of_results" />
+            android:layout_marginTop="20dp"
+            android:text="_________"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.464"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editChooseSimple" />
 
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/imageButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="31dp"
             android:background="@null"
-            android:src="@drawable/cluster_analysis" />
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:src="@drawable/btn_menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:background="@drawable/layout_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/search_results" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/analysis_of_results" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/cluster_analysis" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

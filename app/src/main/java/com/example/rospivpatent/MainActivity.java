@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton btnLoup, btnMenu;
     private EditText editChoose;
     private LinearLayout layoutSearch;
+
     DrawerLayout drawerLayout;
     private LinearLayout simpleSearch, advancedSearch, AISearch, options;
 
