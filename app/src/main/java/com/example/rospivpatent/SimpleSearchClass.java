@@ -19,7 +19,6 @@ public class SimpleSearchClass {
         this.author=author;
         this.applicant=applicant;
         this.SearchArrays=SearchArrays;
-
     }
 
     public String getDocNumber() {
