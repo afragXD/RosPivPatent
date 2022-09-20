@@ -34,33 +34,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        api2();
+        //post();
     }
 
-    private void api2(){
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-
-        JSONObject postData = new JSONObject();
-        try {
-            postData.put("Authorization", "Bearer " + "193692a8f81a4d9286964658a811141c");
-            postData.put("Content-Type", "application/json");
-            postData.put("limit", "1");
-            postData.put("qn", "beer");
-        } catch (JSONException e) {
-            Log.d("MyLog", "FF");
-        }
-        String url = "https://searchplatform.rospatent.gov.ru/patsearch/v0.2/search/";
-
-
-
-        button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                post();
-            }
-        });
-    }
     private void post(){
         JSONObject postData = new JSONObject();
         try {
