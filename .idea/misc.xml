@@ -14,13 +14,17 @@
         <entry key="..\:/RosPivPatent/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Mergen/AndroidStudioProjects/RosPivPatent/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.182" />
         <entry key="..\:/Users/Mergen/AndroidStudioProjects/RosPivPatent/app/src/main/res/drawable/ic_launcher_background.xml" value="0.182" />
+        <entry key="..\:/Users/Mergen/AndroidStudioProjects/RosPivPatent/app/src/main/res/drawable/layout_bg.xml" value="0.1785" />
         <entry key="..\:/Users/Mergen/AndroidStudioProjects/RosPivPatent/app/src/main/res/drawable/line_inp.xml" value="0.182" />
-        <entry key="..\:/Users/Mergen/AndroidStudioProjects/RosPivPatent/app/src/main/res/layout/activity_simple_search.xml" value="0.264" />
+        <entry key="..\:/Users/Mergen/AndroidStudioProjects/RosPivPatent/app/src/main/res/drawable/line_my.xml" value="0.123" />
+        <entry key="..\:/Users/Mergen/AndroidStudioProjects/RosPivPatent/app/src/main/res/layout/activity_main.xml" value="0.1734375" />
+        <entry key="..\:/Users/Mergen/AndroidStudioProjects/RosPivPatent/app/src/main/res/layout/activity_searching_results.xml" value="0.4" />
+        <entry key="..\:/Users/Mergen/AndroidStudioProjects/RosPivPatent/app/src/main/res/layout/activity_simple_search.xml" value="0.4" />
         <entry key="..\:/Users/Mergen/AndroidStudioProjects/RosPivPatent/app/src/main/res/layout/item_serch_alement.xml" value="0.1734375" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
