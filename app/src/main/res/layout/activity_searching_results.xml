@@ -65,15 +65,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="31dp"
-        android:background="null"
+        android:background="@null"
         android:src="@drawable/btn_menu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
         android:orientation="horizontal"
         android:background="@drawable/layout_bg"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -83,19 +83,19 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="null"
-            android:src="@drawable/SearchResults" />
+            android:background="@null"
+            android:src="@drawable/search_results" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="null"
-            android:src="@drawable/AnalysisOfResults" />
+            android:background="@null"
+            android:src="@drawable/analysis_of_results" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="null"
-            android:src="@drawable/ClusterAnalysis" />
+            android:background="@null"
+            android:src="@drawable/cluster_analysis" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
