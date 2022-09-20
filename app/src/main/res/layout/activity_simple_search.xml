@@ -11,7 +11,7 @@
         android:id="@+id/textViewSimple"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="56dp"
         android:text="@string/SimpleSearch"
         android:textSize="30sp"
@@ -20,10 +20,10 @@
 
     <EditText
         android:id="@+id/editChooseSimple"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="33dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="15dp"
         android:background="@drawable/line_inp"
         android:hint="@string/searchText"
@@ -55,7 +55,7 @@
         android:layout_width="127dp"
         android:layout_height="23dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:text="@string/DocumentNumber"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editChooseSimple" />

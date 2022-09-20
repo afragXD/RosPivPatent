@@ -12,4 +12,5 @@
     <color name="Black">#000000</color>
     <color name="lineTextView">#0C1C4C</color>
     <color name="menuTextColor">#878787</color>
+    <color name="recyclerMainText">#09194A</color>
 </resources>

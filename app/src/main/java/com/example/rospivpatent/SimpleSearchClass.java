@@ -9,6 +9,18 @@ public class SimpleSearchClass {
     private String author;
     private String applicant;
     private String SearchArrays;
+
+    public SimpleSearchClass(){
+        SearchText = "";
+        DocNumber = "";
+        PublicationDateFrom = "";
+        PublicationDateBefore = "";
+        CopyrightHolder = "";
+        author = "";
+        applicant = "";
+        SearchArrays = "";
+    }
+
     public SimpleSearchClass (String SearchText,String DocNumber,String PublicationDateFrom,String PublicationDateBefore,String CopyrightHolder,String author,String applicant,String SearchArrays)
     {
         this.SearchText=SearchText;

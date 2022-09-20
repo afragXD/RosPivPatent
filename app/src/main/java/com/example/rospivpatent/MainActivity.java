@@ -7,6 +7,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private void init(){
         btnLoup = findViewById(R.id.btnLoup);
         editChoose = findViewById(R.id.editChoose);
+        //editChoose.setText(Html.fromHtml("<b>beer<\\/b>"));
         layoutSearch = findViewById(R.id.layoutSearch);
         btnMenu = findViewById(R.id.btnMenu);
         drawerLayout = findViewById(R.id.drawerLayout);
@@ -107,6 +109,8 @@ public class MainActivity extends AppCompatActivity {
         try {
             postData.put("qn", input);
             postData.put("limit", 1);
+            postData.put("pre_tag", "<u>");
+            postData.put("post_tag", "</u>");
         } catch (JSONException e) {
             Log.d("MyLog", "FF");
         }
