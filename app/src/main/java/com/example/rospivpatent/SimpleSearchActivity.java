@@ -17,8 +17,6 @@ public class SimpleSearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_search);
-        TextView selection = findViewById(R.id.selection);
-
         Spinner spinner = findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, countries);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -29,7 +27,7 @@ public class SimpleSearchActivity extends AppCompatActivity {
 
 
                 String item = (String)parent.getItemAtPosition(position);
-                selection.setText(item);
+
             }
 
             @Override
