@@ -32,21 +32,24 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:fillViewport="true"
-        android:background="@drawable/layout_radius10"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="30dp"
+        android:background="@drawable/layout_radius10"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewSimple">
+        app:layout_constraintTop_toBottomOf="@+id/textViewSimple"
+        app:layout_constraintVertical_bias="0.0">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent">
 
             <TextView
                 android:id="@+id/textTitle"
@@ -54,9 +57,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="19dp"
                 android:text="TextView"
+                android:textColor="@color/textMain"
                 android:textSize="16dp"
                 android:textStyle="bold"
-                android:textColor="@color/textMain"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
