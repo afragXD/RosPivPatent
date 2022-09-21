@@ -1,6 +1,7 @@
 package com.example.rospivpatent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
 
@@ -39,6 +42,15 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         holder.textDocument.setText(Html.fromHtml("Документ " + searchClass.getPublishing_office() + " " + searchClass.getDocument_number(), Html.FROM_HTML_MODE_LEGACY));
 
         holder.textDescription.setText(Html.fromHtml(searchClass.getDescription(), Html.FROM_HTML_MODE_LEGACY));
+
+        holder.materialCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Single.getInstance().thisElement = list.get(holder.getAdapterPosition());
+                Intent intent = new Intent(context, DocumentActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -49,6 +61,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView textTitle, textFullname, textDate, textDocument, textDescription;
+        MaterialCardView materialCardView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -57,6 +70,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             textDate = itemView.findViewById(R.id.textDate);
             textDocument = itemView.findViewById(R.id.textDocument);
             textDescription = itemView.findViewById(R.id.textDescription);
+            materialCardView = itemView.findViewById(R.id.materialCardView);
         }
     }
 

@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         btnLoup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                post(editChoose.getText().toString());
+                post(editChoose.getText().toString(), 5);
             }
         });
         btnMenu.setOnClickListener(new View.OnClickListener() {
@@ -110,11 +110,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void post(String input){
+    private void post(String input, Integer outCount){
         JSONObject postData = new JSONObject();
         try {
             postData.put("qn", input);
-            postData.put("limit", 150);
+            postData.put("limit", outCount);
             postData.put("pre_tag", "<font color=\"#E30613\">");
             postData.put("post_tag", "</font>");
         } catch (JSONException e) {
@@ -126,7 +126,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    for (int index = 0; index < 150; index++){
+                    //Log.d("MyLog",response.toString());
+                    for (int index = 0; index < outCount; index++){
                         SearchClass buf = new SearchClass();
                         buf.setTitle(response.getJSONArray("hits").getJSONObject(index).getJSONObject("snippet").getString("title"));
                         buf.setDescription(response.getJSONArray("hits").getJSONObject(index).getJSONObject("snippet").getString("description"));

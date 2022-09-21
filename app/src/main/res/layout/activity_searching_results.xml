@@ -17,9 +17,9 @@
             android:id="@+id/textViewSimple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="31dp"
             android:layout_marginEnd="56dp"
-            android:text="@string/SimpleSearch"
+            android:text="@string/fastSearch"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -75,9 +75,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:background="@drawable/layout_bg"
@@ -86,26 +86,42 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@null"
-                app:srcCompat="@drawable/serf"
-                android:contentDescription="TODO" />
-
-            <ImageButton
-                android:layout_width="match_parent"
+                android:id="@+id/imageButton3"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@null"
                 android:contentDescription="TODO"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/serf" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:contentDescription="TODO"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/analysis_of_results" />
 
             <ImageButton
-                android:layout_width="match_parent"
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@null"
                 android:contentDescription="TODO"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageButton"
+                app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/cluster_analysis" />
-        </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"

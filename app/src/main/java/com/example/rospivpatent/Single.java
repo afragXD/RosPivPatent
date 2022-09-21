@@ -7,6 +7,7 @@ public class Single {
     private Single(){}
 
     ArrayList<SearchClass> list = new ArrayList<>();
+    SearchClass thisElement;
 
     public static Single getInstance(){
         if (INSTANCE == null){
