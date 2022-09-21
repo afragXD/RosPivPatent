@@ -48,10 +48,9 @@ public class SearchingResultsActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         list = new ArrayList<>();
-        searchAdapter = new SearchAdapter(this, Single.getInstance().list);
+        list = Single.getInstance().list;
+        searchAdapter = new SearchAdapter(this, list);
         recyclerView.setAdapter(searchAdapter);
-        //list = Single.getInstance().list;
         searchAdapter.notifyDataSetChanged();
-        Log.d("MyLog", String.valueOf(list.size()));
     }
 }

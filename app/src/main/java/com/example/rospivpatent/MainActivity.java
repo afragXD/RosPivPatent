@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //post();
         init();
         click();
     }
@@ -59,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         btnLoup = findViewById(R.id.btnLoup);
         editChoose = findViewById(R.id.editChoose);
         textView = findViewById(R.id.textView);
-        //textView.setText(Html.fromHtml("<i><u><b>beer<\\/b><\\/u><\\/i>", Html.FROM_HTML_MODE_LEGACY));
         layoutSearch = findViewById(R.id.layoutSearch);
         btnMenu = findViewById(R.id.btnMenu);
         drawerLayout = findViewById(R.id.drawerLayout);
@@ -116,9 +114,9 @@ public class MainActivity extends AppCompatActivity {
         JSONObject postData = new JSONObject();
         try {
             postData.put("qn", input);
-            postData.put("limit", 15);
-            postData.put("pre_tag", "<i><u><b>");
-            postData.put("post_tag", "</b></u></i>");
+            postData.put("limit", 150);
+            postData.put("pre_tag", "<u><b>");
+            postData.put("post_tag", "</b></u>");
         } catch (JSONException e) {
             Log.d("MyLog", "FF");
         }
@@ -127,9 +125,8 @@ public class MainActivity extends AppCompatActivity {
         JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.POST, getString(R.string.URL),postData , new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                //Log.d("MyLog", response.toString());
                 try {
-                    for (int index = 0; index < 15; index++){
+                    for (int index = 0; index < 150; index++){
                         SearchClass buf = new SearchClass();
                         buf.setTitle(response.getJSONArray("hits").getJSONObject(index).getJSONObject("snippet").getString("title"));
                         buf.setDescription(response.getJSONArray("hits").getJSONObject(index).getJSONObject("snippet").getString("description"));
@@ -139,11 +136,9 @@ public class MainActivity extends AppCompatActivity {
                         buf.setDocument("Документ " + response.getJSONArray("hits").getJSONObject(index).getJSONObject("common").getString("publishing_office") + " " +
                                 response.getJSONArray("hits").getJSONObject(index).getJSONObject("common").getString("document_number"));
                         list.add(index, buf);
-                        //Log.d("MyLog", list.get(index).getTitle());
                     }
                     Intent intent = new Intent(MainActivity.this, SearchingResultsActivity.class);
                     startActivity(intent);
-                    Log.d("MyLog", String.valueOf(list.size()));
                     Single.getInstance().list = list;
                     //Название
                     //Log.d("MyLog", response.getJSONArray("hits").getJSONObject(1).getJSONObject("snippet").getString("title"));
@@ -178,9 +173,5 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         requestQueue.add(stringRequest);
-        //for (int index = 0; index < 15; index++){
-        //    //list.get(index).getTitle();
-        //    Log.d("MyLog", list.get(index).getTitle());
-        //}
     }
 }
