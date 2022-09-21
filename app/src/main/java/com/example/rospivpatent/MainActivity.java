@@ -115,8 +115,8 @@ public class MainActivity extends AppCompatActivity {
         try {
             postData.put("qn", input);
             postData.put("limit", 150);
-            postData.put("pre_tag", "<u><b>");
-            postData.put("post_tag", "</b></u>");
+            postData.put("pre_tag", "<font color=\"#E30613\">");
+            postData.put("post_tag", "</font>");
         } catch (JSONException e) {
             Log.d("MyLog", "FF");
         }
@@ -131,10 +131,12 @@ public class MainActivity extends AppCompatActivity {
                         buf.setTitle(response.getJSONArray("hits").getJSONObject(index).getJSONObject("snippet").getString("title"));
                         buf.setDescription(response.getJSONArray("hits").getJSONObject(index).getJSONObject("snippet").getString("description"));
                         buf.setFullname("МПК " + response.getJSONArray("hits").getJSONObject(1).getJSONObject("snippet").getJSONObject("classification").getString("ipc"));
-                        buf.setDate(response.getJSONArray("hits").getJSONObject(index).getJSONObject("common").getString("kind") + " " +
-                                response.getJSONArray("hits").getJSONObject(index).getJSONObject("common").getString("publication_date"));
-                        buf.setDocument("Документ " + response.getJSONArray("hits").getJSONObject(index).getJSONObject("common").getString("publishing_office") + " " +
-                                response.getJSONArray("hits").getJSONObject(index).getJSONObject("common").getString("document_number"));
+
+                        buf.setKind(response.getJSONArray("hits").getJSONObject(index).getJSONObject("common").getString("kind"));
+                        buf.setPublication_date(response.getJSONArray("hits").getJSONObject(index).getJSONObject("common").getString("publication_date"));
+
+                        buf.setPublishing_office(response.getJSONArray("hits").getJSONObject(index).getJSONObject("common").getString("publishing_office"));
+                        buf.setDocument_number(response.getJSONArray("hits").getJSONObject(index).getJSONObject("common").getString("document_number"));
                         list.add(index, buf);
                     }
                     Intent intent = new Intent(MainActivity.this, SearchingResultsActivity.class);

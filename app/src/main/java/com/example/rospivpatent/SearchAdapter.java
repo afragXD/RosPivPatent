@@ -34,8 +34,10 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         SearchClass searchClass = list.get(position);
         holder.textTitle.setText(Html.fromHtml(searchClass.getTitle(), Html.FROM_HTML_MODE_LEGACY));
         holder.textFullname.setText(Html.fromHtml(searchClass.getFullname(), Html.FROM_HTML_MODE_LEGACY));
-        holder.textDate.setText(Html.fromHtml(searchClass.getDate(), Html.FROM_HTML_MODE_LEGACY));
-        holder.textDocument.setText(Html.fromHtml(searchClass.getDocument(), Html.FROM_HTML_MODE_LEGACY));
+
+        holder.textDate.setText(Html.fromHtml(searchClass.getKind() + " " + searchClass.getPublication_date(), Html.FROM_HTML_MODE_LEGACY));
+        holder.textDocument.setText(Html.fromHtml("Документ " + searchClass.getPublishing_office() + " " + searchClass.getDocument_number(), Html.FROM_HTML_MODE_LEGACY));
+
         holder.textDescription.setText(Html.fromHtml(searchClass.getDescription(), Html.FROM_HTML_MODE_LEGACY));
     }
 

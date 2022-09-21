@@ -68,6 +68,8 @@
             android:textColor="@color/recyclerMainText"
             android:textStyle="bold"
             android:textSize="13sp"
+            android:maxLines="4"
+            android:ellipsize="end"
             android:text="Предположительно фальшивые ценные документы, соответственно фальшивые ценные документы, могут, но не обязательно должны..." />
 
     </LinearLayout>

@@ -77,8 +77,8 @@
 
         <LinearLayout
             android:id="@+id/constraintLayout"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:background="@drawable/layout_bg"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -86,22 +86,25 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@null"
-                android:src="@drawable/search_results" />
+                app:srcCompat="@drawable/search_results"
+                android:contentDescription="TODO" />
 
             <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@null"
-                android:src="@drawable/analysis_of_results" />
+                android:contentDescription="TODO"
+                app:srcCompat="@drawable/analysis_of_results" />
 
             <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@null"
-                android:src="@drawable/cluster_analysis" />
+                android:contentDescription="TODO"
+                app:srcCompat="@drawable/cluster_analysis" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
