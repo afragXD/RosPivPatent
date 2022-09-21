@@ -30,4 +30,15 @@
     <string name="AdvancedSearcMore">></string>
     <string name="AdvancedSearcLessOrСequals"><![CDATA[<=]]></string>
     <string name="AdvancedSearcMoreOrСequals">>=</string>
+    <string name="LeftParenthesis">(</string>
+    <string name="RightBracket">)</string>
+    <string name="LeftSquareBracket">[</string>
+    <string name="RightSquareBracket">]</string>
+    <string name="leftCurlyBrace">{</string>
+    <string name="КightСurlyBrace">}</string>
+    <string name="star">*</string>
+    <string name="colon">:</string>
+    <string name="BETWEEN">BETWEEN</string>
+    <string name="Quotes">""</string>
+    <string name="Tilde">~</string>
 </resources>
