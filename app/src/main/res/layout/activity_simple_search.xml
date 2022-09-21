@@ -26,10 +26,10 @@
 
         <EditText
             android:id="@+id/editChooseSimple"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="33dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="15dp"
             android:background="@drawable/line_inp"
             android:hint="@string/searchText"
@@ -43,8 +43,8 @@
 
         <ImageButton
             android:id="@+id/btnLoupSimple"
-            android:layout_width="39dp"
-            android:layout_height="0dp"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginTop="106dp"
             android:layout_marginEnd="4dp"
@@ -54,7 +54,8 @@
             app:layout_constraintBottom_toTopOf="@+id/editText6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/editChooseSimple"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/DocumentNumber"
