@@ -12,4 +12,22 @@
     <string name="applicant">заявитель</string>
     <string name="SearchArrays">поисковые массивы</string>
     <string name="PublicationDateBefore">дата публикации до</string>
+    <string name="AdvancedSearch">Расширеный поиск</string>
+    <string name="searchFields">поисковые поля</string>
+    <string name="PublicationDateAdvancedSearch">DP дата публикации</string>
+    <string name="AdvancedSearchAuthor">IN</string>
+    <string name="AdvancedSearchTitle">TI</string>
+    <string name="AdvancedSearchDocumentNumber">PN</string>
+    <string name="AdvancedSearchСountry">PO</string>
+    <string name="AdvancedSearchMPK">IC</string>
+    <string name="AdvancedSearcAnd">AND</string>
+    <string name="AdvancedSearcOr">OR</string>
+    <string name="AdvancedSearcNot">NOT</string>
+    <string name="AdvancedSearcTo">TO</string>
+    <string name="AdvancedSearcAdj">ADJ</string>
+    <string name="AdvancedSearСequals">=</string>
+    <string name="AdvancedSearcLess"><![CDATA[<]]></string>
+    <string name="AdvancedSearcMore">></string>
+    <string name="AdvancedSearcLessOrСequals"><![CDATA[<=]]></string>
+    <string name="AdvancedSearcMoreOrСequals">>=</string>
 </resources>

@@ -10,11 +10,14 @@
         <entry key="..\:/RosPivPatent/app/src/main/res/drawable/padding_menu.xml" value="0.247" />
         <entry key="..\:/RosPivPatent/app/src/main/res/drawable/text_click.xml" value="0.247" />
         <entry key="..\:/RosPivPatent/app/src/main/res/layout/activity_main.xml" value="0.2578125" />
-        <entry key="..\:/RosPivPatent/app/src/main/res/layout/activity_searching_results.xml" value="0.25" />
+        <entry key="..\:/RosPivPatent/app/src/main/res/layout/activity_searching_results.xml" value="0.5" />
         <entry key="..\:/RosPivPatent/app/src/main/res/layout/activity_simple_search.xml" value="0.33" />
-        <entry key="..\:/RosPivPatent/app/src/main/res/layout/item_serch_alement.xml" value="0.6970899470899471" />
+        <entry key="..\:/RosPivPatent/app/src/main/res/layout/item_serch_alement.xml" value="0.9" />
         <entry key="..\:/RosPivPatent/app/src/main/res/layout/main_app_bar.xml" value="0.24114583333333334" />
         <entry key="..\:/RosPivPatent/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Mergen/AndroidStudioProjects/RosPivPatent/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Mergen/AndroidStudioProjects/RosPivPatent/app/src/main/res/layout/activity_searching_results.xml" value="0.536" />
+        <entry key="..\:/Users/Mergen/AndroidStudioProjects/RosPivPatent/app/src/main/res/layout/activity_simple_search.xml" value="0.1" />
       </map>
     </option>
   </component>

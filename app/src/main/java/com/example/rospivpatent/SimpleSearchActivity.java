@@ -6,7 +6,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -23,8 +22,9 @@ public class SimpleSearchActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        init();
+        click();
         setContentView(R.layout.activity_simple_search);
-
         Spinner spinner = findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, countries);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -43,16 +43,10 @@ public class SimpleSearchActivity extends AppCompatActivity {
             }
         };
         spinner.setOnItemSelectedListener(itemSelectedListener);
-        init();
-        click();
     }
     private void init(){
-        drawerLayout = findViewById(R.id.drawerLayout);
         btnMenu = findViewById(R.id.btnMenu);
-        simpleSearch = findViewById(R.id.simpleSearch);
-        advancedSearch = findViewById(R.id.advancedSearch);
-        AISearch = findViewById(R.id.AISearch);
-        options = findViewById(R.id.options);
+        drawerLayout=findViewById(R.id.drawerLayout);
     }
     private void click(){
         btnMenu.setOnClickListener(new View.OnClickListener() {
@@ -60,24 +54,6 @@ public class SimpleSearchActivity extends AppCompatActivity {
         public void onClick(View view) {
             drawerLayout.openDrawer(GravityCompat.START);
         }
-        });
-        advancedSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        AISearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        options.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
+    });
     }
 }
