@@ -61,8 +61,8 @@
 
             <ImageButton
                 android:id="@+id/btnLoupM"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="18dp"
                 android:layout_gravity="center_vertical"
                 android:background="@null"

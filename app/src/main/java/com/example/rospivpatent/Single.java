@@ -8,6 +8,7 @@ public class Single {
 
     ArrayList<SearchClass> list = new ArrayList<>();
     SearchClass thisElement;
+    Integer count = 10;
 
     public static Single getInstance(){
         if (INSTANCE == null){

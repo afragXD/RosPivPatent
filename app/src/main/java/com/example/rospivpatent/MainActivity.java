@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         JSONObject postData = new JSONObject();
         try {
             postData.put("qn", input);
-            postData.put("limit", 5);
+            postData.put("limit", Single.getInstance().count);
             postData.put("pre_tag", "<font color=\"#E30613\">");
             postData.put("post_tag", "</font>");
         } catch (JSONException e) {
@@ -127,11 +127,11 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(JSONObject response) {
                 try {
                     //Log.d("MyLog", response.getJSONArray("hits").getJSONObject(0).getJSONObject("abstract").toString());
-                    for (int index = 0; index < 5; index++){
+                    for (int index = 0; index < Single.getInstance().count; index++){
                         SearchClass buf = new SearchClass();
                         buf.setTitle(response.getJSONArray("hits").getJSONObject(index).getJSONObject("snippet").getString("title"));
                         buf.setDescription(response.getJSONArray("hits").getJSONObject(index).getJSONObject("snippet").getString("description"));
-                        buf.setFullname(response.getJSONArray("hits").getJSONObject(1).getJSONObject("snippet").getJSONObject("classification").getString("ipc"));
+                        buf.setFullname(response.getJSONArray("hits").getJSONObject(index).getJSONObject("snippet").getJSONObject("classification").getString("ipc"));
 
                         buf.setKind(response.getJSONArray("hits").getJSONObject(index).getJSONObject("common").getString("kind"));
                         buf.setPublication_date(response.getJSONArray("hits").getJSONObject(index).getJSONObject("common").getString("publication_date"));
@@ -182,20 +182,6 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, SearchingResultsActivity.class);
                     startActivity(intent);
                     Single.getInstance().list = list;
-                    //Название
-                    //Log.d("MyLog", response.getJSONArray("hits").getJSONObject(1).getJSONObject("snippet").getString("title"));
-                    //Описание
-                    //Log.d("MyLog", response.getJSONArray("hits").getJSONObject(0).getJSONObject("snippet").getString("description"));
-                    //МПК
-                    //Log.d("MyLog", response.getJSONArray("hits").getJSONObject(1).getJSONObject("snippet").getJSONObject("classification").getString("ipc"));
-                    //kind
-                    //Log.d("MyLog", response.getJSONArray("hits").getJSONObject(0).getJSONObject("common").getString("kind"));
-                    //publication_date
-                    //Log.d("MyLog", response.getJSONArray("hits").getJSONObject(0).getJSONObject("common").getString("publication_date"));
-                    //publishing_office
-                    //Log.d("MyLog", response.getJSONArray("hits").getJSONObject(0).getJSONObject("common").getString("publishing_office"));
-                    //document_number
-                    //Log.d("MyLog", response.getJSONArray("hits").getJSONObject(0).getJSONObject("common").getString("document_number"));
                 } catch (JSONException e) {
                     Log.d("MyLog", e.toString());
                 }

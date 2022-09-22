@@ -70,7 +70,7 @@ public class SearchingResultsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 list.clear();
                 searchAdapter.notifyDataSetChanged();
-                post(editChooseSimple.getText().toString(), 5);
+                post(editChooseSimple.getText().toString());
             }
         });
         simpleSearch.setOnClickListener(new View.OnClickListener() {
@@ -109,11 +109,11 @@ public class SearchingResultsActivity extends AppCompatActivity {
         recyclerView.setAdapter(searchAdapter);
         searchAdapter.notifyDataSetChanged();
     }
-    private void post(String input, Integer outCount){
+    private void post(String input){
         JSONObject postData = new JSONObject();
         try {
             postData.put("qn", input);
-            postData.put("limit", outCount);
+            postData.put("limit", Single.getInstance().count);
             postData.put("pre_tag", "<font color=\"#E30613\">");
             postData.put("post_tag", "</font>");
         } catch (JSONException e) {
@@ -126,7 +126,7 @@ public class SearchingResultsActivity extends AppCompatActivity {
             public void onResponse(JSONObject response) {
                 try {
                     //Log.d("MyLog",response.toString());
-                    for (int index = 0; index < outCount; index++){
+                    for (int index = 0; index < Single.getInstance().count; index++){
                         SearchClass buf = new SearchClass();
                         buf.setTitle(response.getJSONArray("hits").getJSONObject(index).getJSONObject("snippet").getString("title"));
                         buf.setDescription(response.getJSONArray("hits").getJSONObject(index).getJSONObject("snippet").getString("description"));
