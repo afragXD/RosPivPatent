@@ -130,7 +130,7 @@ public class SimpleSearchActivity extends AppCompatActivity {
             JSONObject filter = new JSONObject();
 
             if (!TextUtils.isEmpty(editChoose.getText().toString())) {
-                postData.put("qn", input);
+                postData.put("q", input);
             }
             postData.put("limit", Single.getInstance().count);
             postData.put("pre_tag", "<font color=\"#E30613\">");
@@ -144,9 +144,9 @@ public class SimpleSearchActivity extends AppCompatActivity {
 
             if (!TextUtils.isEmpty(editDate.getText().toString())) {
                 JSONObject values2 = new JSONObject();
-                JSONArray arr2 = new JSONArray();
-                arr2.put(editDate.getText().toString());
-                values2.put("values", arr2);
+                JSONObject gg = new JSONObject();
+                gg.put("gt", editDate.getText().toString());
+                values2.put("range", gg);
                 filter.put("date_published", values2);
             }
 

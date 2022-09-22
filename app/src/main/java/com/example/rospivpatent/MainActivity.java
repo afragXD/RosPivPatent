@@ -146,36 +146,6 @@ public class MainActivity extends AppCompatActivity {
                             buf.setInventor("-");
                         }
 
-                        RequestQueue requestQueue1 = Volley.newRequestQueue(MainActivity.this);
-                        JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.POST, getString(R.string.URL2) + buf.getId(),null , new Response.Listener<JSONObject>() {
-                            @Override
-                            public void onResponse(JSONObject response) {
-                                try {
-                                    //Log.d("MyLog", response.getJSONObject("abstract").getJSONObject("en").toString());
-                                    String allText = response.getJSONObject("abstract").getString("en");
-                                    String uitText = allText.replaceAll("</p></pat:Abstract>.*", "");
-                                    uitText = uitText.substring(uitText.lastIndexOf(">") + 1);
-                                    buf.setReferat(uitText);
-                                } catch (JSONException e) {
-                                    Log.d("MyLog", e.toString());
-                                }
-                            }
-                        }, new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                Log.d("MyLog", error.toString());
-                            }
-                        }){
-                            @Override
-                            public Map<String, String> getHeaders() throws AuthFailureError {
-                                HashMap<String, String> headers = new HashMap<String, String>();
-                                headers.put("Authorization", "Bearer " + getString(R.string.SECURITY_API_KEY));
-                                headers.put("Content-Type", "application/json");
-                                return headers;
-                            }
-                        };
-                        requestQueue1.add(stringRequest);
-
                         list.add(index, buf);
                     }
 

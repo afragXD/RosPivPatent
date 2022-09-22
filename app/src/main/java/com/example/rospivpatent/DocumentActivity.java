@@ -112,6 +112,36 @@ public class DocumentActivity extends AppCompatActivity {
         textDescription.setText(Html.fromHtml(Single.getInstance().thisElement.getDescription(), Html.FROM_HTML_MODE_LEGACY));
         textReferat.setText(Single.getInstance().thisElement.getReferat());
 
+        RequestQueue requestQueue1 = Volley.newRequestQueue(DocumentActivity.this);
+        JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.POST, getString(R.string.URL2) + Single.getInstance().thisElement.getId(),null , new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    //Log.d("MyLog", response.getJSONObject("abstract").getJSONObject("en").toString());
+                    String allText = response.getJSONObject("abstract").getString("en");
+                    String uitText = allText.replaceAll("</p></pat:Abstract>.*", "");
+                    uitText = uitText.substring(uitText.lastIndexOf(">") + 1);
+                    textReferat.setText(uitText);
+                } catch (JSONException e) {
+                    Log.d("MyLog", e.toString());
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("MyLog", error.toString());
+            }
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Authorization", "Bearer " + getString(R.string.SECURITY_API_KEY));
+                headers.put("Content-Type", "application/json");
+                return headers;
+            }
+        };
+        requestQueue1.add(stringRequest);
+
         textLink.setText(Html.fromHtml("<a href=\\\"https://searchplatform.rospatent.gov.ru/doc/" + Single.getInstance().thisElement.getId() + "\\\">Полная версия документа" + "</a>", Html.FROM_HTML_MODE_LEGACY));
         textLink.setOnClickListener(new View.OnClickListener() {
             @Override
