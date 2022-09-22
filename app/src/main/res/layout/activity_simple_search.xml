@@ -91,12 +91,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"
-            android:text="@string/PublicationDateFrom"
+            android:text="@string/PublicationDate"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/DocumentNumberEditText" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/editDate"
             android:layout_width="0dp"
             android:layout_height="25dp"
             android:layout_marginStart="5dp"
@@ -109,27 +109,6 @@
             app:layout_constraintTop_toBottomOf="@+id/PublicationDateFromTextView" />
 
         <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="40dp"
-            android:text="@string/PublicationDateBefore"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/DocumentNumberEditText" />
-
-        <EditText
-            android:id="@+id/editText5"
-            android:layout_width="125dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="4dp"
-            android:paddingLeft="20sp"
-            android:background="@drawable/line_my"
-            app:layout_constraintEnd_toEndOf="@+id/textView4"
-            app:layout_constraintStart_toStartOf="@+id/textView4"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-        <TextView
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -138,10 +117,10 @@
             android:layout_marginTop="20dp"
             android:text="@string/author"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+            app:layout_constraintTop_toBottomOf="@+id/editDate" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/editAuthor"
             android:layout_width="340dp"
             android:layout_height="35dp"
             android:layout_marginTop="20dp"
@@ -159,10 +138,10 @@
             android:layout_marginTop="20dp"
             android:text="@string/CopyrightHolder"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText4" />
+            app:layout_constraintTop_toBottomOf="@+id/editAuthor" />
 
         <EditText
-            android:id="@+id/editText6"
+            android:id="@+id/editPatentHolder"
             android:layout_width="340dp"
             android:layout_height="35dp"
             android:layout_marginTop="20dp"
@@ -179,12 +158,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:text="@string/applicant"
+            android:text="@string/country"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText6" />
+            app:layout_constraintTop_toBottomOf="@+id/editPatentHolder" />
 
         <EditText
-            android:id="@+id/editText7"
+            android:id="@+id/editCountry"
             android:layout_width="340dp"
             android:layout_height="35dp"
             android:paddingLeft="20sp"
@@ -202,8 +181,9 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:text="@string/SearchArrays"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText7" />
+            app:layout_constraintTop_toBottomOf="@+id/editCountry" />
 
         <Spinner
             android:id="@+id/spinner"
@@ -212,6 +192,7 @@
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 

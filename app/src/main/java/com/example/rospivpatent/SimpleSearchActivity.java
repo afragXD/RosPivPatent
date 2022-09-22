@@ -7,6 +7,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -38,7 +39,7 @@ public class SimpleSearchActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     private LinearLayout simpleSearch, advancedSearch, AISearch, options;
     private ImageButton btnLoupM, btnMenu;
-    private EditText editChoose;
+    private EditText editChoose, DocumentNumberEditText, editDate, editAuthor, editPatentHolder, editCountry;
 
     ArrayList<SearchClass> list;
     String[] countries = { "Россия и страны СНГ", "Минимум РСТ", "Страны с малым потентным фондом"};
@@ -77,6 +78,11 @@ public class SimpleSearchActivity extends AppCompatActivity {
         advancedSearch = findViewById(R.id.advancedSearch);
         AISearch = findViewById(R.id.AISearch);
         options = findViewById(R.id.options);
+        DocumentNumberEditText = findViewById(R.id.DocumentNumberEditText);
+        editAuthor = findViewById(R.id.editAuthor);
+        editDate = findViewById(R.id.editDate);
+        editPatentHolder = findViewById(R.id.editPatentHolder);
+        editCountry = findViewById(R.id.editCountry);
 
         list = new ArrayList<>();
     }
@@ -123,19 +129,50 @@ public class SimpleSearchActivity extends AppCompatActivity {
         try {
             JSONObject filter = new JSONObject();
 
-            postData.put("qn", "beer");
+            if (!TextUtils.isEmpty(editChoose.getText().toString())) {
+                postData.put("qn", input);
+            }
             postData.put("limit", Single.getInstance().count);
             postData.put("pre_tag", "<font color=\"#E30613\">");
             postData.put("post_tag", "</font>");
 
-            JSONArray values = new JSONArray();
-            values.put("200100594");
-            filter.put("number", values);
+            if (!TextUtils.isEmpty(DocumentNumberEditText.getText().toString())) {
+                JSONObject values = new JSONObject();
+                values.put("values", DocumentNumberEditText.getText().toString());
+                filter.put("number", values);
+            }
 
+            if (!TextUtils.isEmpty(editDate.getText().toString())) {
+                JSONObject values2 = new JSONObject();
+                JSONArray arr2 = new JSONArray();
+                arr2.put(editDate.getText().toString());
+                values2.put("values", arr2);
+                filter.put("date_published", values2);
+            }
 
-            JSONArray values2 = new JSONArray();
-            values2.put("20020702");
-            filter.put("date_published", values2);
+            if (!TextUtils.isEmpty(editAuthor.getText().toString())) {
+                JSONObject values3 = new JSONObject();
+                JSONArray arr2 = new JSONArray();
+                arr2.put(editAuthor.getText().toString());
+                values3.put("values", arr2);
+                filter.put("authors", values3);
+            }
+
+            if (!TextUtils.isEmpty(editPatentHolder.getText().toString())) {
+                JSONObject values4 = new JSONObject();
+                JSONArray arr2 = new JSONArray();
+                arr2.put(editPatentHolder.getText().toString());
+                values4.put("values", arr2);
+                filter.put("patent_holders", values4);
+            }
+
+            if (!TextUtils.isEmpty(editCountry.getText().toString())) {
+                JSONObject values5 = new JSONObject();
+                JSONArray arr2 = new JSONArray();
+                arr2.put(editCountry.getText().toString());
+                values5.put("values", arr2);
+                filter.put("country", values5);
+            }
 
             postData.put("filter", filter);
             Log.d("MyLog", Single.getInstance().count.toString());
@@ -149,7 +186,7 @@ public class SimpleSearchActivity extends AppCompatActivity {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    //Log.d("MyLog", response.getJSONArray("hits").getJSONObject(0).toString());
+                    Log.d("MyLog", response.getString("total"));
                     for (int index = 0; index < Single.getInstance().count; index++){
                         SearchClass buf = new SearchClass();
                         buf.setTitle(response.getJSONArray("hits").getJSONObject(index).getJSONObject("snippet").getString("title"));
