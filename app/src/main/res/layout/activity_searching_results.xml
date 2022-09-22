@@ -65,7 +65,7 @@
             app:layout_constraintTop_toBottomOf="@+id/editChooseSimple" />
 
         <ImageButton
-            android:id="@+id/btnMenu_1"
+            android:id="@+id/btnMenu"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="30dp"

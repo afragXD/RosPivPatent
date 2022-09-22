@@ -49,10 +49,14 @@ public class SearchingResultsActivity extends AppCompatActivity {
     }
     private void init(){
         drawerLayout = findViewById(R.id.drawerLayout);
-        btnMenu = findViewById(R.id.btnMenu_1);
+        btnMenu = findViewById(R.id.btnMenu);
         recyclerView = findViewById(R.id.recyclerView);
         editChooseSimple = findViewById(R.id.editChooseSimple);
         btnLoupSimple = findViewById(R.id.btnLoupSimple);
+        simpleSearch = findViewById(R.id.simpleSearch);
+        advancedSearch = findViewById(R.id.advancedSearch);
+        AISearch = findViewById(R.id.AISearch);
+        options = findViewById(R.id.options);
     }
     private void click(){
         btnMenu.setOnClickListener(new View.OnClickListener() {
@@ -67,7 +71,32 @@ public class SearchingResultsActivity extends AppCompatActivity {
                 list.clear();
                 searchAdapter.notifyDataSetChanged();
                 post(editChooseSimple.getText().toString(), 5);
-                //searchAdapter.notifyDataSetChanged();
+            }
+        });
+        simpleSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SearchingResultsActivity.this, SimpleSearchActivity.class);
+                startActivity(intent);
+                //finish();
+            }
+        });
+        advancedSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        AISearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        options.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }
@@ -112,20 +141,6 @@ public class SearchingResultsActivity extends AppCompatActivity {
                         searchAdapter.notifyItemInserted(index);
                     }
                     Single.getInstance().list = list;
-                    //Название
-                    //Log.d("MyLog", response.getJSONArray("hits").getJSONObject(1).getJSONObject("snippet").getString("title"));
-                    //Описание
-                    //Log.d("MyLog", response.getJSONArray("hits").getJSONObject(0).getJSONObject("snippet").getString("description"));
-                    //МПК
-                    //Log.d("MyLog", response.getJSONArray("hits").getJSONObject(1).getJSONObject("snippet").getJSONObject("classification").getString("ipc"));
-                    //kind
-                    //Log.d("MyLog", response.getJSONArray("hits").getJSONObject(0).getJSONObject("common").getString("kind"));
-                    //publication_date
-                    //Log.d("MyLog", response.getJSONArray("hits").getJSONObject(0).getJSONObject("common").getString("publication_date"));
-                    //publishing_office
-                    //Log.d("MyLog", response.getJSONArray("hits").getJSONObject(0).getJSONObject("common").getString("publishing_office"));
-                    //document_number
-                    //Log.d("MyLog", response.getJSONArray("hits").getJSONObject(0).getJSONObject("common").getString("document_number"));
                 } catch (JSONException e) {
                     Log.d("MyLog", e.toString());
                 }

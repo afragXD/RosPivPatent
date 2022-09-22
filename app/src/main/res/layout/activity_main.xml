@@ -49,7 +49,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView">
 
             <EditText
-                android:id="@+id/editChoose"
+                android:id="@+id/editChooseM"
                 android:layout_width="257dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/line_inp"
@@ -60,7 +60,7 @@
                 android:textColor="@color/black" />
 
             <ImageButton
-                android:id="@+id/btnLoup"
+                android:id="@+id/btnLoupM"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="18dp"
