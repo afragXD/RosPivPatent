@@ -57,7 +57,7 @@
                 android:maxLength="30"
                 android:maxLines="1"
                 android:paddingLeft="20sp"
-                android:textColor="@color/black" />
+                android:textColor="@color/xd" />
 
             <ImageButton
                 android:id="@+id/btnLoupM"

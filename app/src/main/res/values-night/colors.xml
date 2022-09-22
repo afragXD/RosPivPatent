@@ -3,4 +3,6 @@
     <color name="textMain">#FFFFFF</color>
     <color name="lineTextView">#FFFFFF</color>
     <color name="menuTextColor">#FFFFFF</color>
+
+    <color name="xd">#FFFFFF</color>
 </resources>

@@ -15,4 +15,6 @@
     <color name="SimpleSearchLineTextView">#B3B3B3</color>
     <color name="recyclerMainText">#09194A</color>
     <color name="menuChoose">#108A0B</color>
+
+    <color name="xd">#000000</color>
 </resources>
